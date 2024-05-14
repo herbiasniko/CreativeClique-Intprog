@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class FragmentPrivateMessage: Fragment() {
     override fun onCreateView(
@@ -13,20 +15,32 @@ class FragmentPrivateMessage: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var view =  inflater.inflate(R.layout.fragment_private_message, container, false)
-        var sampleArrowBack: ImageButton = view.findViewById(R.id.sampleArrowBack)
-        sampleArrowBack.setOnClickListener {
+        val view = inflater.inflate(R.layout.fragment_private_message, container, false)
+        val backBtn: ImageButton = view.findViewById(R.id.back_btn)
 
-            //ayaw lng ni tangtanga code ni para mo balik sa message fragment
-            //ilisi lng ang layout ug asa ibutang ang arrow back
+        val messages = listOf(
+            PrivateMessageSealed.SenderMessage("Bai, pasar kas INTPROG?"),
+            PrivateMessageSealed.ReceiverMessage("Nah, ambot lang pud ani bai murag hagbong man"),
+            PrivateMessageSealed.SenderMessage("Same:))"),
+            PrivateMessageSealed.ReceiverMessage("Mayntag malooy si Sir Joem nato, papasaron ta"),
+            PrivateMessageSealed.SenderMessage("Lage bai, maynta jud oy")
+        )
+
+        val recyclerView: RecyclerView = view.findViewById(R.id.messageRecyclerView)
+        val adapter = PrivateMessageAdapter(messages)
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        backBtn.setOnClickListener {
             (activity as MainActivity).showBottomNavigationBar()
             requireActivity().supportFragmentManager.popBackStack()
         }
 
         return view
     }
-    fun handleBackPressed() {
 
+    fun handleBackPressed() {
         requireActivity().supportFragmentManager.popBackStack()
     }
 }
