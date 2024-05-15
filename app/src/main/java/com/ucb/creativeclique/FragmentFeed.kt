@@ -26,9 +26,9 @@ class FragmentFeed: Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val feedItems = listOf(
-            FeedItem(R.drawable.profile_pic, "Niko Herbias", "100 Followers", "IntProg IntProg IntProg IntProg IntProg IntProg", R.drawable.img_4),
-            FeedItem(R.drawable.profile_pic, "Remard Quimque", "200 Followers", "IntProg IntProg IntProg IntProg IntProg IntProg", R.drawable.img_5),
-            FeedItem(R.drawable.profile_pic, "Ramon Tagli", "200 Followers", "IntProg IntProg IntProg IntProg IntProg IntProg", R.drawable.img_6),
+            FeedItem(R.drawable.img_7, "Niko Herbias", "100 Followers", "Love's timeless dance, forever captured in frames", R.drawable.img_4),
+            FeedItem(R.drawable.profile_pic, "Ramon Alejandro Tagli", "200 Followers", "In every frame, a story awaits", R.drawable.img_5),
+            FeedItem(R.drawable.img_8, "Remard Quimque", "200 Followers", "Through the lens, beauty unfolds", R.drawable.img_6),
             )
 
         feedAdapter = FeedAdapter(feedItems)
