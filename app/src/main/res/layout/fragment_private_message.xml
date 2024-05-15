@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_layout">
+    android:background="@drawable/signbg">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/start_guideline"
@@ -102,6 +102,7 @@
             android:layout_gravity="end|center_vertical"
             android:layout_marginEnd="20dp"
             android:src="@drawable/send_btn"
+            android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="3dp"
             app:layout_constraintBottom_toBottomOf="parent" />
