@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="FragmentPrivateMessage"
-    android:background="@drawable/messagebg">
+    android:background="@drawable/signbg">
 
     <!-- Back button -->
     <ScrollView
@@ -14,7 +14,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_layout">
+            android:background="@drawable/signbg">
 
             <!-- Back button ni siya anhi-->
             <ImageButton
