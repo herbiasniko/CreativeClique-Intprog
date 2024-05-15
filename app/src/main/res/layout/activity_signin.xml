@@ -114,7 +114,6 @@
                 android:textColor="@color/midgrey"
                 android:fontFamily="@font/poppinssb"
                 android:linksClickable="true"
-                android:layout_toRightOf="@id/text_4"
                 android:layout_below="@id/btn1"
                 android:layout_marginRight="110dp"/>
 
