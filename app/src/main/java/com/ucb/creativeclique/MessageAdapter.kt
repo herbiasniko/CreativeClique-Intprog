@@ -3,11 +3,16 @@ package com.ucb.creativeclique
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MessageAdapter(private val messages: List<Message>) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+class MessageAdapter(private val messages: List<Message>, private val listener: OnItemClickListener) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+
+    interface OnItemClickListener {
+        fun onItemClick(message: Message)
+    }
 
     inner class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val avatarImageView: ImageView = itemView.findViewById(R.id.avatarImageView)
@@ -15,13 +20,15 @@ class MessageAdapter(private val messages: List<Message>) : RecyclerView.Adapter
         private val contentTextView: TextView = itemView.findViewById(R.id.contentTextView)
 
         fun bind(message: Message) {
-            // Bind message data to views
-            // Here, you would load the image into the ImageView using a library like Glide or Picasso
-            // For example:
-            // Glide.with(itemView).load(message.senderImageUri).into(avatarImageView)
-
             senderTextView.text = message.sender
             contentTextView.text = message.content
+
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    listener.onItemClick(messages[position])
+                }
+            }
         }
     }
 

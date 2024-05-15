@@ -6,6 +6,7 @@ import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import android.view.View
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,8 +31,8 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     R.id.nav_post -> {
-                        replaceFragment(FragmentPost())
-                        true
+                        Toast.makeText(this, "Not available", Toast.LENGTH_SHORT).show()
+                        false
                     }
                     R.id.nav_messages -> {
                         replaceFragment(FragmentMessage())

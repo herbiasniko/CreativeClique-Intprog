@@ -64,8 +64,14 @@ class FragmentProfile : Fragment() {
         }
 
         messageButton.setOnClickListener {
-            val intent = Intent(requireContext(), FragmentPrivateMessage::class.java)
-            startActivity(intent)
+            var privateMessage = FragmentPrivateMessage()
+            requireActivity().supportFragmentManager.beginTransaction()
+                // Replace the current fragment with FragmentFeed
+                .replace(R.id.fragment_container, privateMessage)
+                // Add the transaction to the back stack
+                .addToBackStack(null)
+                // Commit the transaction
+                .commit()
         }
 
         setImageClickListener(imageOne, R.drawable.imageone)

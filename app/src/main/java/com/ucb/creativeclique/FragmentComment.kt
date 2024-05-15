@@ -36,8 +36,8 @@ class FragmentComment : BottomSheetDialogFragment() {
 
         var item = ArrayList<CommentItem>()
         item.add(CommentItem(R.drawable.profile_pic, "Ramon Alejandro", "chuya ba ana oy"))
-        item.add(CommentItem(R.drawable.profile_pic, "Ramon Alejandro", "chuya ba a asd sfdsfoy"))
-        item.add(CommentItem(R.drawable.profile_pic, "Ramon Alejandro", "chuya ba a asd sfdsfoy"))
+        item.add(CommentItem(R.drawable.img_7, "Niko Herbias", "chuya ba a asd sfdsfoy"))
+        item.add(CommentItem(R.drawable.img_8, "Remard Quimque", "chuya ba a asd sfdsfoy"))
 
 
         commentAdapter = CommentAdapter(item)

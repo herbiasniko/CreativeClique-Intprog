@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +15,7 @@ import com.ucb.creativeclique.Message
 import com.ucb.creativeclique.MessageAdapter
 import com.ucb.creativeclique.R
 
-class FragmentMessage : Fragment() {
+class FragmentMessage : Fragment(), MessageAdapter.OnItemClickListener {
 
     private lateinit var messageRecyclerView: RecyclerView
     private lateinit var messageAdapter: MessageAdapter
@@ -30,7 +31,7 @@ class FragmentMessage : Fragment() {
         messageRecyclerView = view.findViewById(R.id.messageRecyclerView)
 
         // Set up RecyclerView
-        messageAdapter = MessageAdapter(getSampleMessages()) // Replace this with your actual messages
+        messageAdapter = MessageAdapter(getSampleMessages(), this) // Replace this with your actual messages
         messageRecyclerView.adapter = messageAdapter
         messageRecyclerView.layoutManager = LinearLayoutManager(context)
 
@@ -49,8 +50,22 @@ class FragmentMessage : Fragment() {
                 .commit()
         }
 
+
         return view
     }
+    override fun onItemClick(message: Message) {
+        // Handle item click
+        // For example, you can display a toast with the sender name
+        var privateMessage = FragmentPrivateMessage()
+        requireActivity().supportFragmentManager.beginTransaction()
+            // Replace the current fragment with FragmentFeed
+            .replace(R.id.fragment_container, privateMessage)
+            // Add the transaction to the back stack
+            .addToBackStack(null)
+            // Commit the transaction
+            .commit()
+    }
+
 
     // Function to generate sample messages (Replace this with your actual message fetching logic)
     private fun getSampleMessages(): List<Message> {
@@ -70,8 +85,10 @@ class FragmentMessage : Fragment() {
     }
 
 
+
     // Optionally, you can add a function to handle back button presses
     fun handleBackPressed() {
         requireActivity().supportFragmentManager.popBackStack()
     }
+
 }
