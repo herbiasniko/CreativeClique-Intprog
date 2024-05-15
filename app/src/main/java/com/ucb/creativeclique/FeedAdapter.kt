@@ -4,11 +4,15 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import de.hdodenhof.circleimageview.CircleImageView
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class FeedAdapter(private val feedItems: List<FeedItem>) :
     RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
@@ -20,6 +24,7 @@ class FeedAdapter(private val feedItems: List<FeedItem>) :
         val contentTextView: TextView = itemView.findViewById(R.id.content)
         var imageContentTextView: ImageView = itemView.findViewById(R.id.imagecontent)
         var feedContainer: LinearLayout = itemView.findViewById(R.id.feedContainer)
+        var commentButton: ImageButton = itemView.findViewById(R.id.commentButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
@@ -36,8 +41,15 @@ class FeedAdapter(private val feedItems: List<FeedItem>) :
         holder.imageContentTextView.setImageResource(item.image2)
         holder.feedContainer.setBackgroundResource(R.drawable.color)
 
-        holder.circularImageView.setOnClickListener {
-           
+        holder.commentButton.setOnClickListener {
+            val context = holder.itemView.context
+            if (context is AppCompatActivity) {
+                val bottomSheetDialogFragment = FragmentComment()
+                bottomSheetDialogFragment.show(
+                    context.supportFragmentManager,
+                    "CustomBottomSheetDialogFragment"
+                )
+            }
         }
     }
 

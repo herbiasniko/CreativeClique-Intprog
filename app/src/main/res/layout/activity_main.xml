@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:labelVisibilityMode="labeled"
+            android:background="@color/black"
             app:menu="@menu/bottom_nav_menu" />
 
 
