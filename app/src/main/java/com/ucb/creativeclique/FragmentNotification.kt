@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,7 @@ class FragmentNotification: Fragment() {
 
         val recyclerView: RecyclerView = view.findViewById(R.id.notificationRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        var notificationButton: ImageButton = view.findViewById(R.id.notificationButton)
 
         val notifications = listOf(
             NotificationItem.Header("Recent"),
@@ -38,6 +40,13 @@ class FragmentNotification: Fragment() {
         val adapter = NotificationAdapter(notifications)
         recyclerView.adapter = adapter
         //ayaw lng ni tangtanga ibutang lng imong code babaw ani nga line
+        notificationButton.setOnClickListener {
+            var backFragment = FragmentFeed()
+
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, backFragment)
+                .commit()
+        }
         (activity as MainActivity).showBottomNavigationBar()
         requireActivity().supportFragmentManager.popBackStack()
 

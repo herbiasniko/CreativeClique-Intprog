@@ -39,7 +39,7 @@ class FeedAdapter(private val feedItems: List<FeedItem>) :
         holder.followerTextView.text = item.followers
         holder.contentTextView.text = item.content
         holder.imageContentTextView.setImageResource(item.image2)
-        holder.feedContainer.setBackgroundResource(R.drawable.color)
+        holder.feedContainer.setBackgroundResource(R.drawable.bg_layout)
 
         holder.commentButton.setOnClickListener {
             val context = holder.itemView.context

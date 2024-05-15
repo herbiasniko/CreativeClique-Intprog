@@ -14,8 +14,8 @@ object AccountManager {
         return account != null
     }
 
-    fun Search(fullName: String): Boolean {
-        val search = registeredAccount.find { it.fullName.equals(fullName, ignoreCase = true) }
+    fun Search(userName: String): Boolean {
+        val search = registeredAccount.find { it.userName.equals(userName, ignoreCase = true) }
         return search != null
     }
     fun isEmailRegistered(email: String): Boolean {
