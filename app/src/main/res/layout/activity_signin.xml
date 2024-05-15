@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_3"
+    android:background="@drawable/signbg"
     tools:context=".Signin">
 
     <ImageView
         android:layout_width="180dp"
         android:layout_height="150dp"
-        android:src="@drawable/img"
+        android:src="@drawable/cclogof"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="100dp" />
+
     <TextView
         android:id="@+id/text_1"
         android:layout_width="wrap_content"
@@ -21,93 +22,133 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:fontFamily="@font/poppinssb"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="220dp"/>
+
     <EditText
         android:id="@+id/editxt_1"
         android:layout_width="330dp"
         android:layout_height="50dp"
-        android:background="@drawable/edit_round"
-        android:hint="Enter your email or phone number"
-        android:textSize="15sp"
+        android:hint="Email"
+        android:textSize="16sp"
         android:fontFamily="@font/poppinsreg"
-        android:paddingLeft="30dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/lightgrey"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_below="@id/text_1"/>
+
     <EditText
         android:id="@+id/editxt_2"
         android:layout_width="330dp"
         android:layout_height="50dp"
-        android:background="@drawable/edit_round"
-        android:hint="Enter your password"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:textSize="15sp"
+        android:textSize="16sp"
         android:fontFamily="@font/poppinsreg"
-        android:paddingLeft="30dp"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
+        android:textColorHint="@color/lightgrey"
+        android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_below="@id/editxt_1"/>
-    <TextView
-        android:id="@+id/text_2"
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forgot Password"
-        android:fontFamily="@font/poppinsreg"
-        android:textSize="15sp"
+        android:layout_below="@id/editxt_2"
+        android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:textColor="#00ffff"
-        android:linksClickable="true"
-        android:layout_marginTop="40dp"
-        android:layout_below="@id/editxt_2"/>
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_button"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:fontFamily="@font/poppinsb"
-        android:text="Sign in"
-        android:layout_marginTop="50dp"
-        android:layout_below="@id/text_2"/>
+        android:id="@+id/LL1"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="180dp"
+            android:fontFamily="@font/poppinssb"
+            android:text="Sign In"
+            android:textColor="@color/lightgrey"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/signinupin"
+            android:background="@android:color/transparent"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppinsb"
+            android:text="Sign in"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/btn1">
+        android:layout_below="@id/LL1"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="70dp">
 
-    <TextView
-        android:id="@+id/text_4"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't have an account?"
-        android:textSize="15sp"
-        android:layout_below="@id/btn1"
-        android:textColor="@color/white"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/text_6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:textSize="15sp"
-        android:layout_centerHorizontal="true"
-        android:textColor="#00ffff"
-        android:textStyle="bold"
-        android:linksClickable="true"
-        android:layout_toRightOf="@id/text_4"
-        android:layout_below="@id/btn1"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"/>
+        android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textSize="15sp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/midgrey"
+                android:fontFamily="@font/poppinssb"
+                android:linksClickable="true"
+                android:layout_toRightOf="@id/text_4"
+                android:layout_below="@id/btn1"
+                android:layout_marginRight="110dp"/>
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="4dp"
+                android:src="@drawable/line"/>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password?"
+                android:fontFamily="@font/poppinsb"
+                android:textSize="15sp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/midgrey"
+                android:linksClickable="true"
+                android:layout_below="@id/LL1" />
+
+            <ImageView
+                android:layout_width="139dp"
+                android:layout_height="0.8dp"
+                android:src="@drawable/line"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>
