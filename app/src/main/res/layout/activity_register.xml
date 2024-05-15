@@ -71,31 +71,66 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:layout_below="@id/editxt_3"/>
-    <ImageButton
-        android:id="@+id/btn1"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:fontFamily="@font/poppinsb"
-        android:text="Register"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/editxt_4"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editxt_4"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/LL2"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="180dp"
+            android:fontFamily="@font/poppinssb"
+            android:text="Sign Up"
+            android:textColor="@color/lightgrey"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/signinupin"
+            android:background="@android:color/transparent"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppinsb"
+            android:text="Sign in"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/LL2"
+        android:layout_marginLeft="45dp">
 
     <TextView
         android:id="@+id/text_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign in"
-        android:textSize="15sp"
-        android:layout_centerHorizontal="true"
-        android:textColor="#00ffff"
-        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/midgrey"
         android:linksClickable="true"
-        android:layout_below="@id/btn1"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_below="@id/LL2"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppinssb"/>
+
+        <ImageView
+            android:layout_width="139dp"
+            android:layout_height="1dp"
+            android:src="@drawable/line"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

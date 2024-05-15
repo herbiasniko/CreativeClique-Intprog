@@ -29,7 +29,6 @@ class Signin : AppCompatActivity() {
         registerTxtView.setOnClickListener {
             val intent = Intent(this, Register::class.java)
             startActivity(intent)
-            finish()
         }
 
         signinBtn.setOnClickListener {
@@ -42,7 +41,8 @@ class Signin : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
-            }else{
+            }
+            else{
                 Toast.makeText(this, "Invalid Username or Password", Toast.LENGTH_SHORT).show()
             }
         }

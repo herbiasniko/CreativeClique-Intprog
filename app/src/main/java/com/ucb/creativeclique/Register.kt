@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Button
 import android.content.Intent
+import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 
 class Register : AppCompatActivity() {
@@ -12,7 +14,7 @@ class Register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val registerBtn = findViewById<Button>(R.id.btn1)
+        val registerBtn = findViewById<ImageButton>(R.id.btn1)
 
         registerBtn.setOnClickListener {
             val fullName = findViewById<EditText>(R.id.editxt_1).text.toString()
@@ -38,6 +40,13 @@ class Register : AppCompatActivity() {
                 }
             }
         }
+        var text_5 = findViewById<TextView>(R.id.text_5)
+        text_5.setOnClickListener {
+            var intent = Intent(this, Signin::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     private fun isValidEmail(email: String): Boolean {
@@ -49,4 +58,6 @@ class Register : AppCompatActivity() {
         val pattern = Regex("^(?=.*[\\W_])(?=.*[a-zA-Z0-9]).{8,}\$")
         return pattern.matches(password)
     }
+
+
 }

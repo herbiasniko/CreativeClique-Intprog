@@ -37,6 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".AccountRegistered"
             android:exported="false" />
@@ -50,6 +51,8 @@
             android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan"/>
+
+
 
     </application>
 
