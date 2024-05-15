@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_layout"
+    android:orientation="vertical">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Diha rang laay"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/label_background"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/notif_icon"
+            android:background="@null"/>
+
+        <TextView
+            android:id="@+id/notificationNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Notifications"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="12dp"/>
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notificationRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

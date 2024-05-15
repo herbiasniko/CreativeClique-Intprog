@@ -13,12 +13,24 @@
         android:theme="@style/Theme.CreativeClique"
         tools:targetApi="31">
         <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".Signin"
+            android:exported="false"/>
+
+        <activity
+            android:name=".AccountRegistered"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
             android:name=".SearchActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan"
-
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
