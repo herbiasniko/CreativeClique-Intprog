@@ -1,15 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_height="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/menubg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingLeft="280dp">
+
+        <ImageButton
+            android:id="@+id/btnBackToMain"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:src="@drawable/menubackbutton"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ari mag code sa menu"/>
-    <ImageButton
-        android:id="@+id/ArrowBack"
-        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/profile_pic"
+            android:layout_margin="20dp"/> <!-- Add end margin to separate from the TextViews -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp">
+
+
+            <TextView
+                android:id="@+id/firstTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ramon Alejandro Tagli"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/secondTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ramboytagli@gmail.com"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/notification"/>
+        android:orientation="horizontal"
+        android:padding="13dp"
+        android:layout_marginLeft="20dp">
+
+        <ImageButton
+            android:id="@+id/btnProfileSettings"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/profilebutt"
+            android:contentDescription="Profile Button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile Settings"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="13dp"
+        android:layout_marginLeft="20dp">
+
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/settingsbut"
+            android:contentDescription="Settings Button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="13dp"
+        android:layout_marginLeft="20dp">
+
+        <ImageButton
+            android:id="@+id/btnSubs"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/subbut"
+            android:contentDescription="Subscription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscription"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="13dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="20dp">
+
+        <ImageButton
+            android:id="@+id/btnLogButt"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logoutbutt"
+            android:contentDescription="Logout" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="10dp"/>
+    <!-- Repeat the same pattern for other buttons -->
 
 </LinearLayout>
