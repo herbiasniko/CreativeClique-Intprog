@@ -10,4 +10,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="greysolid">#2E2E2E</color>
     <color name="buttonColor">#00ABEC</color>
+    <color name="lightgrey">#CECED1</color>
+    <color name="midgrey">#959595</color>
 </resources>

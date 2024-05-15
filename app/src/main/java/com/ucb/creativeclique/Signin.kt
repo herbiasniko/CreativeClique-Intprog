@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 
@@ -17,7 +18,7 @@ class Signin : AppCompatActivity() {
         val passwordEdTxt = findViewById<EditText>(R.id.editxt_2)
         val forgotPassTxtView = findViewById<TextView>(R.id.text_2)
         val registerTxtView = findViewById<TextView>(R.id.text_6)
-        val signinBtn = findViewById<Button>(R.id.btn1)
+        val signinBtn = findViewById<ImageButton>(R.id.btn1)
 
         forgotPassTxtView.setOnClickListener{
             val intent = Intent(this, ForgotPassword::class.java)
